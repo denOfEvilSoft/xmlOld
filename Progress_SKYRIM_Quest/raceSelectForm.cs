@@ -20,15 +20,34 @@ namespace Progress_SKYRIM_Quest
         }
         private string userName;
         private string race;
+        private string sex;
+
+        private int[] skills;
+
+        private void raceSelectForm_Load(object sender, EventArgs e)
+        {
+            c_sex.SelectedIndex = 0;
+            skills = new int[18];
+            /*
+             * 궁술 방어술 중갑 한손무기 양손무기 제련 연금술 경갑 자물쇠따기 소매치기 은신 화술 변화(마법) 소환 파괴 환영 회복 마법부여
+             *  0     1    2      3       4      5    6    7      8         9     10   11     12      13  14   15   16   17
+             */
+        }
 
         private void b_nord_Click(object sender, EventArgs e)
         {
             race = "노드";
+            l_race.Text = "노드";
+            for(int skillIndex =0; skillIndex < 18; skillIndex++)
+            {
+                skills[0] = 0;
+            }
+            skills[4] = 10; skills[1] = 5; skills[3] = 5; skills[5] = 5;skills[11] = 5;
             r_raceSkill.Text =
                 "+10 양손무기\n" +
                 "+5 방어술\n" +
                 "+5 한손무기\n" +
-                "+5 대장기술\n" +
+                "+5 제련\n" +
                 "+5 화술\n";
             r_raceStartMagic.Text =
                 "+2 불길\n" +
@@ -46,6 +65,12 @@ namespace Progress_SKYRIM_Quest
         private void b_darkElf_Click(object sender, EventArgs e)
         {
             race = "다크엘프";
+            l_race.Text = "다크엘프";
+            for (int skillIndex = 0; skillIndex < 18; skillIndex++)
+            {
+                skills[0] = 0;
+            }
+            skills[14] = 10;skills[6] = 5;skills[12] = 5;skills[15] = 5;skills[7] = 5;skills[10] = 5;
             r_raceSkill.Text =
                 "+10 파괴마법\n" +
                 "+5 연금술\n" +
@@ -68,13 +93,19 @@ namespace Progress_SKYRIM_Quest
         private void redGurad_Click(object sender, EventArgs e)
         {
             race = "레드가드";
+            l_race.Text = "레드가드";
+            for (int skillIndex = 0; skillIndex < 18; skillIndex++)
+            {
+                skills[0] = 0;
+            }
+            skills[3] = 10;skills[12] = 5;skills[0] = 5;skills[1] = 5;skills[14] = 5;skills[5] = 5;
             r_raceSkill.Text =
                 "+10 한손무기\n" +
                 "+5 변화마법\n" +
                 "+5 궁술\n" +
                 "+5 방어\n" +
                 "+5 파괴마법\n" +
-                "+5 재련";
+                "+5 제련";
             r_raceStartMagic.Text =
                 "+2 불길\n" +
                 "+2 치유";
@@ -98,29 +129,22 @@ namespace Progress_SKYRIM_Quest
                 MessageBox.Show("이름부터 입력해주세요!", "이름 입력 빠짐", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
-            if (r_raceAbility.Text == "")
+            if (l_race.Text == "")
             {
                 MessageBox.Show("종족부터 선택해주세요!", "종족 선택 안함", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
-            userName = t_userName.Text;
-            try 
+            if(c_sex.Text =="성별 선택")
             {
-                using (FileStream userData = new FileStream(userName + ".skyrim", FileMode.CreateNew))
-                {
-                    var write = new StreamWriter(userData, Encoding.UTF8);
-                    write.WriteLine(
-                        "정보" +
-                        userName + "\n" +
-                        race + "\n\n"+)
-                    write.Flush();
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("이미 있는 이름입니다!", "이미 있는 이름", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show("성별을 정해주세요!", "성별 선택 안함", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
+
+            userName = t_userName.Text;
+            race = l_race.Text;
+            sex = c_sex.Text;
+            raceBase newOne = new raceBase(userName, race, sex, skills);
+            newOne.creatNew();
         }
     }
 }

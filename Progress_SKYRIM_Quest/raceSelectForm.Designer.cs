@@ -30,7 +30,9 @@ namespace Progress_SKYRIM_Quest
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.r_raceSkill = new System.Windows.Forms.RichTextBox();
             this.box = new System.Windows.Forms.GroupBox();
+            this.r_raceStartMagic = new System.Windows.Forms.RichTextBox();
             this.t_userName = new System.Windows.Forms.TextBox();
             this.l_name = new System.Windows.Forms.Label();
             this.b_nord = new System.Windows.Forms.Button();
@@ -45,13 +47,14 @@ namespace Progress_SKYRIM_Quest
             this.b_highElf = new System.Windows.Forms.Button();
             this.b_creat = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.r_raceSkill = new System.Windows.Forms.RichTextBox();
-            this.r_raceStartMagic = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.r_raceAbility = new System.Windows.Forms.RichTextBox();
             this.r_raceDescription = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.c_sex = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.l_race = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.box.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,15 +72,33 @@ namespace Progress_SKYRIM_Quest
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "스킬 보너스";
             // 
+            // r_raceSkill
+            // 
+            this.r_raceSkill.Enabled = false;
+            this.r_raceSkill.Location = new System.Drawing.Point(7, 21);
+            this.r_raceSkill.Name = "r_raceSkill";
+            this.r_raceSkill.Size = new System.Drawing.Size(141, 141);
+            this.r_raceSkill.TabIndex = 0;
+            this.r_raceSkill.Text = "";
+            // 
             // box
             // 
             this.box.Controls.Add(this.r_raceStartMagic);
             this.box.Location = new System.Drawing.Point(113, 199);
             this.box.Name = "box";
-            this.box.Size = new System.Drawing.Size(154, 168);
+            this.box.Size = new System.Drawing.Size(154, 195);
             this.box.TabIndex = 1;
             this.box.TabStop = false;
             this.box.Text = "시작시 보유 마법";
+            // 
+            // r_raceStartMagic
+            // 
+            this.r_raceStartMagic.Enabled = false;
+            this.r_raceStartMagic.Location = new System.Drawing.Point(7, 18);
+            this.r_raceStartMagic.Name = "r_raceStartMagic";
+            this.r_raceStartMagic.Size = new System.Drawing.Size(141, 171);
+            this.r_raceStartMagic.TabIndex = 1;
+            this.r_raceStartMagic.Text = "";
             // 
             // t_userName
             // 
@@ -190,7 +211,7 @@ namespace Progress_SKYRIM_Quest
             // 
             // b_creat
             // 
-            this.b_creat.Location = new System.Drawing.Point(548, 344);
+            this.b_creat.Location = new System.Drawing.Point(548, 371);
             this.b_creat.Name = "b_creat";
             this.b_creat.Size = new System.Drawing.Size(75, 23);
             this.b_creat.TabIndex = 14;
@@ -200,31 +221,13 @@ namespace Progress_SKYRIM_Quest
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(548, 315);
+            this.button11.Location = new System.Drawing.Point(548, 342);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
             this.button11.TabIndex = 15;
             this.button11.Text = "돌아가기";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // r_raceSkill
-            // 
-            this.r_raceSkill.Enabled = false;
-            this.r_raceSkill.Location = new System.Drawing.Point(7, 21);
-            this.r_raceSkill.Name = "r_raceSkill";
-            this.r_raceSkill.Size = new System.Drawing.Size(141, 141);
-            this.r_raceSkill.TabIndex = 0;
-            this.r_raceSkill.Text = "";
-            // 
-            // r_raceStartMagic
-            // 
-            this.r_raceStartMagic.Enabled = false;
-            this.r_raceStartMagic.Location = new System.Drawing.Point(7, 18);
-            this.r_raceStartMagic.Name = "r_raceStartMagic";
-            this.r_raceStartMagic.Size = new System.Drawing.Size(141, 144);
-            this.r_raceStartMagic.TabIndex = 1;
-            this.r_raceStartMagic.Text = "";
             // 
             // groupBox2
             // 
@@ -250,7 +253,7 @@ namespace Progress_SKYRIM_Quest
             this.r_raceDescription.Enabled = false;
             this.r_raceDescription.Location = new System.Drawing.Point(7, 21);
             this.r_raceDescription.Name = "r_raceDescription";
-            this.r_raceDescription.Size = new System.Drawing.Size(249, 141);
+            this.r_raceDescription.Size = new System.Drawing.Size(249, 168);
             this.r_raceDescription.TabIndex = 0;
             this.r_raceDescription.Text = "";
             // 
@@ -259,7 +262,7 @@ namespace Progress_SKYRIM_Quest
             this.groupBox3.Controls.Add(this.r_raceDescription);
             this.groupBox3.Location = new System.Drawing.Point(280, 199);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(262, 168);
+            this.groupBox3.Size = new System.Drawing.Size(262, 195);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "종족 설명";
@@ -276,18 +279,51 @@ namespace Progress_SKYRIM_Quest
             this.groupBox4.Controls.Add(this.b_khajiit);
             this.groupBox4.Controls.Add(this.b_woodElf);
             this.groupBox4.Controls.Add(this.b_imperial);
-            this.groupBox4.Location = new System.Drawing.Point(14, 51);
+            this.groupBox4.Location = new System.Drawing.Point(14, 78);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(93, 316);
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "종족";
             // 
+            // c_sex
+            // 
+            this.c_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.c_sex.FormattingEnabled = true;
+            this.c_sex.Items.AddRange(new object[] {
+            "성별 선택",
+            "남성",
+            "여성"});
+            this.c_sex.Location = new System.Drawing.Point(14, 52);
+            this.c_sex.Name = "c_sex";
+            this.c_sex.Size = new System.Drawing.Size(93, 20);
+            this.c_sex.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(548, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 12);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "선택한 종족";
+            // 
+            // l_race
+            // 
+            this.l_race.AutoSize = true;
+            this.l_race.Location = new System.Drawing.Point(548, 52);
+            this.l_race.Name = "l_race";
+            this.l_race.Size = new System.Drawing.Size(0, 12);
+            this.l_race.TabIndex = 19;
+            // 
             // raceSelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(641, 384);
+            this.ClientSize = new System.Drawing.Size(641, 408);
+            this.Controls.Add(this.l_race);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.c_sex);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -300,6 +336,7 @@ namespace Progress_SKYRIM_Quest
             this.Name = "raceSelectForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "캐릭터 생성";
+            this.Load += new System.EventHandler(this.raceSelectForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.box.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -335,5 +372,8 @@ namespace Progress_SKYRIM_Quest
         private System.Windows.Forms.RichTextBox r_raceDescription;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox c_sex;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label l_race;
     }
 }
