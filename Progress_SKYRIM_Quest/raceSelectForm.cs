@@ -144,7 +144,8 @@ namespace Progress_SKYRIM_Quest
             race = l_race.Text;
             sex = c_sex.Text;
             raceBase newOne = new raceBase(userName, race, sex, skills);
-            newOne.creatNew();
+            newOne.creatNew(r_raceAbility.Text, r_raceStartMagic.Text);
+            this.Close();
         }
     }
 }
