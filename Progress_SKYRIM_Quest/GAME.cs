@@ -16,5 +16,10 @@ namespace Progress_SKYRIM_Quest
         {
             InitializeComponent();
         }
+
+        private void GAME_Load(object sender, EventArgs e)
+        {
+            listView1.
+        }
     }
 }

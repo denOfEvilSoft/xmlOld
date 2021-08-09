@@ -29,27 +29,38 @@ namespace Progress_SKYRIM_Quest
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
             this.listView1 = new System.Windows.Forms.ListView();
+            this.프로필 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.내용 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listView1
             // 
-            this.listView1.GridLines = true;
-            listViewGroup1.Header = "ListViewGroup";
-            listViewGroup1.Name = "listViewGroup1";
-            listViewGroup2.Header = "ListViewGroup";
-            listViewGroup2.Name = "listViewGroup2";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1,
-            listViewGroup2});
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.프로필,
+            this.내용});
+            this.listView1.Enabled = false;
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(41, 204);
+            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.Scrollable = false;
+            this.listView1.Size = new System.Drawing.Size(192, 116);
             this.listView1.TabIndex = 0;
+            this.listView1.TabStop = false;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // 프로필
+            // 
+            this.프로필.Text = "프로필";
+            this.프로필.Width = 64;
+            // 
+            // 내용
+            // 
+            this.내용.Text = "내용";
+            this.내용.Width = 122;
             // 
             // GAME
             // 
@@ -59,6 +70,7 @@ namespace Progress_SKYRIM_Quest
             this.Controls.Add(this.listView1);
             this.Name = "GAME";
             this.Text = "GAME";
+            this.Load += new System.EventHandler(this.GAME_Load);
             this.ResumeLayout(false);
 
         }
@@ -66,5 +78,7 @@ namespace Progress_SKYRIM_Quest
         #endregion
 
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader 프로필;
+        private System.Windows.Forms.ColumnHeader 내용;
     }
 }
