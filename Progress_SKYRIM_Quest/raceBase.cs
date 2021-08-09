@@ -77,8 +77,9 @@ namespace Progress_SKYRIM_Quest
                         );
 
                     writer.WriteLine(
-                        "진영" + "\n"
-                        );
+                        "진영" + "\n" +
+                        "없음" + "\n"
+                        ); ;
 
                     writer.WriteLine("스킬");
                     for (int line = 0; line < 18; line++)

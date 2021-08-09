@@ -38,7 +38,7 @@ namespace Progress_SKYRIM_Quest
             saveFile.ShowDialog();
             selectedFile = saveFile.FileName;
 
-            GAME main = new GAME();
+            GAME main = new GAME(selectedFile);
             main.Show();
         }
     }
