@@ -36,15 +36,15 @@ namespace Progress_SKYRIM_Quest
 
                     var item = new ListViewItem("이름");
                     item.SubItems.Add(name);
-                    listView1.Items.Add(item);
+                    l_char.Items.Add(item);
 
                     item = new ListViewItem("종족");
                     item.SubItems.Add(race);
-                    listView1.Items.Add(item);
+                    l_char.Items.Add(item);
 
                     item = new ListViewItem("성별");
                     item.SubItems.Add(sex);
-                    listView1.Items.Add(item);
+                    l_char.Items.Add(item);
                 }
                 if(cheak == "기본스텟")
                 {

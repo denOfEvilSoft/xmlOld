@@ -86,7 +86,20 @@ namespace Progress_SKYRIM_Quest
                     {
                         writer.WriteLine(setSkills[line]);
                     }
-
+                    writer.WriteLine(
+                        "\n장비" + "\n" + 
+                        "없음" + "\n" + // 머리
+                        "없음" + "\n" + // 어깨
+                        "없음" + "\n" + // 흉갑
+                        "없음" + "\n" + // 팔
+                        "없음" + "\n" + // 손목
+                        "없음" + "\n" + // 각반
+                        "없음" + "\n" + // 발
+                        "없음" + "\n" + // 목걸이
+                        "없음" + "\n" + // 장신구
+                        "없음" + "\n" + // 오른손 반지
+                        "없음" + "\n"   // 왼손반지
+                        );
                     writer.WriteLine(
                         "\n마법" + "\n" +
                         raceAbility + "\n" +
