@@ -26,7 +26,7 @@ namespace Progress_SKYRIM_Quest
             for(int line =0; line < data.Length; line++)
             {
                 string cheak = data[line].ToString();
-                if(cheak == "종족")
+                if(cheak == "캐릭터시트")
                 {
                     line++;
                     string name = data[line].ToString();
@@ -46,7 +46,7 @@ namespace Progress_SKYRIM_Quest
                     item.SubItems.Add(sex);
                     l_char.Items.Add(item);
                 }
-                if(cheak == "기본스텟")
+                if(cheak == "캐릭터스탯")
                 {
                     line++;
 

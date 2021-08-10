@@ -57,35 +57,28 @@ namespace Progress_SKYRIM_Quest
                     StreamWriter writer = new StreamWriter(file, Encoding.UTF8);
                     // CTD 모드 회차 추가
                     writer.WriteLine(
-                        "종족" + "\n" +
+                        "캐릭터시트" + "\n" +
                         userName + "\n" +
                         userRace + "\n" +
                         sex + "\n");
 
                     writer.WriteLine(
-                        "기본스텟" + "\n" +
+                        "캐릭터스탯" + "\n" +
                         magicka + "\n" +
                         health + "\n" +
                         stamina + "\n"
                         );
-
                     writer.WriteLine(
-                        "CTD모드회차" + "\n" +
+                        "레벨경험치" + "\n" +
+                        1 + "\n" + // 렙
+                        0 + "\n" // 프로그레스바 경험치 숫자
+                        );
+                    writer.WriteLine(
+                        "기록" + "\n" +
                         0 + "\n" + // ctd
                         0 + "\n" + // 모드
                         1 + "\n"  // 회차
                         );
-
-                    writer.WriteLine(
-                        "진영" + "\n" +
-                        "없음" + "\n"
-                        ); ;
-
-                    writer.WriteLine("스킬");
-                    for (int line = 0; line < 18; line++)
-                    {
-                        writer.WriteLine(setSkills[line]);
-                    }
                     writer.WriteLine(
                         "\n장비" + "\n" + 
                         "없음" + "\n" + // 머리
@@ -100,6 +93,17 @@ namespace Progress_SKYRIM_Quest
                         "없음" + "\n" + // 오른손 반지
                         "없음" + "\n"   // 왼손반지
                         );
+
+                    writer.WriteLine(
+                        "진영" + "\n" +
+                        "없음" + "\n"
+                        ); ;
+
+                    writer.WriteLine("스킬");
+                    for (int line = 0; line < 18; line++)
+                    {
+                        writer.WriteLine(setSkills[line]);
+                    }
                     writer.WriteLine(
                         "\n마법" + "\n" +
                         raceAbility + "\n" +
