@@ -130,6 +130,7 @@ namespace xmlOld
                 {
                     using(MySqlCommand cmd = new MySqlCommand())
                     {
+                        this.Cursor = Cursors.WaitCursor;
                         DBconnection.ConnectionString = connectionString;
                         cmd.Connection = DBconnection; 
                         DBconnection.Open();
@@ -141,17 +142,43 @@ namespace xmlOld
                                 restaurant view = listBox1.SelectedItem as restaurant;
                                 object[] forDB = new object[13];
                                 forDB = view.returnAll();
-                                string quarry =
+                                string forDetect =
+                                    "SELECT Name, Institution, DayOfTheWeek " +
+                                    "FROM 전국무료급식소";
+                                cmd.CommandText = forDetect;
+                                bool isThere = false;
+                                using(MySqlDataReader reader = cmd.ExecuteReader())
+                                {
+                                    while (reader.Read()) 
+                                    {
+                                        if (reader.GetString(0) == forDB[0].ToString() && reader.GetString(1) == forDB[5].ToString() && reader.GetString(2) == forDB[10].ToString())
+                                        {
+                                            isThere = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if(isThere == true)
+                                {
+                                    continue;
+                                }
+                                string query =
                                     "INSERT INTO 전국무료급식소" +
-                                    "(Name, Do, Si, Gun, Other, Institution, Number, Location, Target, Time, DayOfTheWeek, Latitue, Longtitude) " +
+                                    "(Name, Do, Si, Gun, Other, Institution, Number, Location, Target, Time, DayOfTheWeek, Latitude, Longtitude) " +
                                     "VALUES('" + forDB[0].ToString() + "','" + forDB[1].ToString() + "','" + forDB[2].ToString() + "','" + forDB[3].ToString() + "','"
                                     + forDB[4].ToString() + "','" + forDB[5].ToString() + "','" + forDB[6].ToString() + "','" + forDB[7].ToString() + "','" + forDB[8].ToString() + "','"
                                     + forDB[9].ToString() + "','" + forDB[10].ToString() + "','" + Convert.ToDouble(forDB[11]) + "','" + Convert.ToDouble(forDB[12]) + "')";
-                                cmd.CommandText = quarry;
+                                cmd.CommandText = query;
                                 cmd.ExecuteNonQuery();
                             }
+                            string forCount =
+                                "SELECT COUNT(*) FROM 전국무료급식소";
+                            cmd.CommandText = forCount;
+                            object count = cmd.ExecuteScalar();
+                            MessageBox.Show("완료!\n\n전국무료급식소 테이블 안의 행 수 : " + count.ToString());
                         }
                     }
+                    this.Cursor = Cursors.Default;
                     DBconnection.Close();
                 }
             }

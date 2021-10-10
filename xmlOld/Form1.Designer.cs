@@ -220,7 +220,6 @@ namespace xmlOld
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.PropertyGrid propertyGrid2;
         private System.Windows.Forms.Button b_parse;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -228,6 +227,7 @@ namespace xmlOld
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button b_db;
+        public System.Windows.Forms.ListBox listBox1;
     }
 }
 
