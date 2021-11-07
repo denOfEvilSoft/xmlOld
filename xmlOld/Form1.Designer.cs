@@ -43,6 +43,8 @@ namespace xmlOld
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.b_db = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.l_countNum = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +95,9 @@ namespace xmlOld
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.l_countNum);
             this.groupBox1.Controls.Add(this.b_selectFile);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.l_fileLocation);
@@ -104,6 +108,7 @@ namespace xmlOld
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "파일";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // listBox1
             // 
@@ -186,6 +191,23 @@ namespace xmlOld
             this.b_db.UseVisualStyleBackColor = true;
             this.b_db.Click += new System.EventHandler(this.b_db_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(87, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 12);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "파싱 수 : ";
+            // 
+            // l_countNum
+            // 
+            this.l_countNum.AutoSize = true;
+            this.l_countNum.Location = new System.Drawing.Point(150, 25);
+            this.l_countNum.Name = "l_countNum";
+            this.l_countNum.Size = new System.Drawing.Size(0, 12);
+            this.l_countNum.TabIndex = 16;
+            // 
             // l_nameList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -228,6 +250,8 @@ namespace xmlOld
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button b_db;
         public System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label l_countNum;
     }
 }
 
