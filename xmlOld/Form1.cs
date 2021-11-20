@@ -111,7 +111,7 @@ namespace xmlOld
                     int roadCasualties = Convert.ToInt32(emp.SelectSingleNode("CASLT_CNT").InnerText);
                     int dead = Convert.ToInt32(emp.SelectSingleNode("DPRS_CNT").InnerText);
                     int severelyInjured = Convert.ToInt32(emp.SelectSingleNode("SERINJRY_INDVDL_CNT").InnerText);
-                    int minorInjury = Convert.ToInt32(emp.SelectSingleNode("SERINJRY_INDVDL_CNT").InnerText);
+                    int minorInjury = Convert.ToInt32(emp.SelectSingleNode("SLTINJRY_INDVDL_CNT").InnerText);
                     int injured = Convert.ToInt32(emp.SelectSingleNode("INJURY_APLCNT_CNT").InnerText);
                     double latitude = Convert.ToDouble(emp.SelectSingleNode("LAT").InnerText);
                     double longtitude = Convert.ToDouble(emp.SelectSingleNode("LOGT").InnerText);
@@ -157,7 +157,7 @@ namespace xmlOld
                     int roadCasualties = Convert.ToInt32(emp.SelectSingleNode("CASLT_CNT").InnerText);
                     int dead = Convert.ToInt32(emp.SelectSingleNode("DPRS_CNT").InnerText);
                     int severelyInjured = Convert.ToInt32(emp.SelectSingleNode("SERINJRY_INDVDL_CNT").InnerText);
-                    int minorInjury = Convert.ToInt32(emp.SelectSingleNode("SERINJRY_INDVDL_CNT").InnerText);
+                    int minorInjury = Convert.ToInt32(emp.SelectSingleNode("SLTINJRY_INDVDL_CNT").InnerText);
                     int injured = Convert.ToInt32(emp.SelectSingleNode("INJURY_APLCNT_CNT").InnerText);
                     double latitude = Convert.ToDouble(emp.SelectSingleNode("LAT").InnerText);
                     double longtitude = Convert.ToDouble(emp.SelectSingleNode("LOGT").InnerText);
@@ -203,7 +203,7 @@ namespace xmlOld
                     int roadCasualties = Convert.ToInt32(emp.SelectSingleNode("CASLT_CNT").InnerText);
                     int dead = Convert.ToInt32(emp.SelectSingleNode("DPRS_CNT").InnerText);
                     int severelyInjured = Convert.ToInt32(emp.SelectSingleNode("SERINJRY_INDVDL_CNT").InnerText);
-                    int minorInjury = Convert.ToInt32(emp.SelectSingleNode("SERINJRY_INDVDL_CNT").InnerText);
+                    int minorInjury = Convert.ToInt32(emp.SelectSingleNode("SLTINJRY_INDVDL_CNT").InnerText);
                     int injured = Convert.ToInt32(emp.SelectSingleNode("INJURY_APLCNT_CNT").InnerText);
                     double latitude = Convert.ToDouble(emp.SelectSingleNode("LAT").InnerText);
                     double longtitude = Convert.ToDouble(emp.SelectSingleNode("LOGT").InnerText);
@@ -290,7 +290,7 @@ namespace xmlOld
                                 }
                                 string query =
                                     "INSERT INTO 전국무료급식소" +
-                                    "(Name, Do, Si, Gun, Other, Institution, Number, Location, Target, Time, DayOfTheWeek, Latitude, Longtitude) " +
+                                    "(Name, Do, Si, Gun, Other, Institution, Number, Location, Target, Time, DayOfTheWeek, latitude, longtitude) " +
                                     "VALUES('" + forDB[0].ToString() + "','" + forDB[1].ToString() + "','" + forDB[2].ToString() + "','" + forDB[3].ToString() + "','"
                                     + forDB[4].ToString() + "','" + forDB[5].ToString() + "','" + forDB[6].ToString() + "','" + forDB[7].ToString() + "','" + forDB[8].ToString() + "','"
                                     + forDB[9].ToString() + "','" + forDB[10].ToString() + "','" + Convert.ToDouble(forDB[11]) + "','" + Convert.ToDouble(forDB[12]) + "')";
